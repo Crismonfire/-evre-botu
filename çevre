@@ -1,0 +1,25 @@
+import discord
+from discord.ext import commands
+intents = discord.Intents.default()
+intents.message_content = True
+bot = commands.Bot(command_prefix='!', intents=intents)
+@bot.event
+async def on_ready():
+    print(f'{bot.user} olarak giriş yaptık')
+@bot.command()
+async def çöp(ctx):
+    await ctx.send(f'Merhaba! {bot.user}, herşeyin atıldığı ve ayrışmadan atılan atıklar !')
+@bot.command()
+async def heh(ctx, count_heh = 5):
+    await ctx.send("he" * count_heh)
+bot.run("GİZLİ TOKEN BURAYA")
+@bot.command()
+async def pil(ctx):
+    await ctx.send(f'Merhaba! {bot.user}, pilleri yere atmak yerine market tarzı yerlerde olan pil atık kutularına atınız  !')
+@bot.command()
+async def yemek (ctx):
+    await ctx.send(f'Merhaba! {bot.user}, bunları ya düzgün olanları sokak hayvanlarına vermeliyiz yada çöpe atmalıyız !')
+@bot.command()
+async def kağıt(ctx):
+    await ctx.send(f'Merhaba! {bot.user}, bunları ya geri dönüşüme göndermeliyiz ve doğaya katkı sağlamalıyız !')
+bot.run("token")
